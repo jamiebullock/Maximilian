@@ -1,20 +1,16 @@
 #include "maximilian.h"
 
-const int NUM = 200;
-
-maxiOsc sineBank[NUM];//let's create an oscillator and give it a name.
-maxiOsc modu;
+//This shows how the fundamental building block of digital audio - the sine wave.
+//
+maxiOsc mySine;//One oscillator - can be called anything. Can be any of the available waveforms.
 void setup() {//some inits
-	//nothing to go here this time
+    //nothing to go here this time
 }
 
-
-
-
-void play(double *output) {//this is where the magic happens. Very slow magic.
-    double  wave = modu.saw(100);
-    *output = wave;//simple as that!
-	
+void play(double *output) {
+    
+    output[0]=mySine.sinewave(440);
+    output[1]=output[0];
     
 }
 
